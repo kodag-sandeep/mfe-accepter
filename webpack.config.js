@@ -48,6 +48,8 @@ module.exports = {
       name: "accepter",
       remotes: {
         container: "container@http://localhost:8082/remoteEntry.js",
+        shared2: "shared2@http://localhost:8083/remoteEntry.js",
+        // bubba_frontend: "bubba_frontend@http://localhost:3000/#/remoteEntry.js",
       },
       // shared: {
       //   ...deps,

@@ -1,15 +1,21 @@
-import React from "react";
-const CounterAppOne = React.lazy(() => import("container/App"));
+import React, { useState } from "react";
 const Button = React.lazy(() => import("container/button"));
 
+const Users = React.lazy(() => import("shared2/getData"));
+
 const App = () => {
+  const getUserDetail = (data) => {
+    console.log(data);
+  };
   return (
     <>
-      <h1>welcome to MFE accepter component</h1>
+      <h4>HOME</h4>
       <React.Suspense fallback={"loading"}>
-        <CounterAppOne />
-        <br />
         <Button />
+      </React.Suspense>
+      <br />
+      <React.Suspense fallback={"loading"}>
+        <Users getUserDetail={getUserDetail} />
       </React.Suspense>
     </>
   );
