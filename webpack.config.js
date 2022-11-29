@@ -51,15 +51,15 @@ module.exports = {
         shared2: "shared2@http://localhost:8083/remoteEntry.js",
         // bubba_frontend: "bubba_frontend@http://localhost:3000/#/remoteEntry.js",
       },
-      // shared: {
-      //   ...deps,
-      //   react: { singleton: true, eager: true, requiredVersion: deps.react },
-      //   "react-dom": {
-      //     singleton: true,
-      //     eager: true,
-      //     requiredVersion: deps["react-dom"],
-      //   },
-      // },
+      shared: {
+        ...deps,
+        react: { singleton: true, eager: true, requiredVersion: deps.react },
+        "react-dom": {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),

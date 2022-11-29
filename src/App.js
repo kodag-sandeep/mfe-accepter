@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-const Button = React.lazy(() => import("container/button"));
+import React from "react";
+// const Button = React.lazy(() => import("container/button"));
 
 const Users = React.lazy(() => import("shared2/getData"));
 
@@ -8,16 +8,16 @@ const App = () => {
     console.log(data);
   };
   return (
-    <>
+    <React.Fragment>
       <h4>HOME</h4>
-      <React.Suspense fallback={"loading"}>
+      {/* <React.Suspense fallback={"loading"}>
         <Button />
-      </React.Suspense>
+      </React.Suspense> */}
       <br />
       <React.Suspense fallback={"loading"}>
         <Users getUserDetail={getUserDetail} />
       </React.Suspense>
-    </>
+    </React.Fragment>
   );
 };
 
